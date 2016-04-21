@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DanmakuFlameMaster/DanmakuFlameMaster.iml" filepath="$PROJECT_DIR$/DanmakuFlameMaster/DanmakuFlameMaster.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Kikk/Kikk.iml" filepath="$PROJECT_DIR$/Kikk/Kikk.iml" />
       <module fileurl="file://$PROJECT_DIR$/kikk.iml" filepath="$PROJECT_DIR$/kikk.iml" />
     </modules>
   </component>
