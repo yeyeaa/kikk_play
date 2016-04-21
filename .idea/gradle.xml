@@ -10,7 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/DanmakuFlameMaster" />
-            <option value="$PROJECT_DIR$/Kikk" />
+            <option value="$PROJECT_DIR$/player" />
           </set>
         </option>
       </GradleProjectSettings>
