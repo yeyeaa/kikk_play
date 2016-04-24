@@ -1,8 +1,42 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Light">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:editTextStyle">@style/myEditTextTheme</item>
+        <item name="android:windowAnimationStyle">@style/myAnimation</item>
+        <item name="android:progressBarStyle">@style/myProgressBar</item>
+        <item name="android:windowBackground">@color/grey_back</item>
+    </style>
+
+    <style name="myProgressBar" parent="@android:style/Widget.ProgressBar.Inverse">
+        <item name="android:indeterminateDrawable">@drawable/color_progress</item>
+    </style>
+
+    <style name="myAnimation">
+        <item name="android:activityOpenEnterAnimation">@anim/push_left_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/push_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/push_right_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/push_right_out</item>
+        <item name="android:taskOpenEnterAnimation">@anim/push_left_in</item>
+        <item name="android:taskOpenExitAnimation">@anim/push_left_out</item>
+        <item name="android:taskCloseEnterAnimation">@anim/push_right_in</item>
+        <item name="android:taskCloseExitAnimation">@anim/push_right_out</item>
+        <item name="android:taskToFrontEnterAnimation">@anim/push_left_in</item>
+        <item name="android:taskToFrontExitAnimation">@anim/push_left_out</item>
+        <item name="android:taskToBackEnterAnimation">@anim/push_right_in</item>
+        <item name="android:taskToBackExitAnimation">@anim/push_right_out</item>
+    </style>
+
+    <style name="myEditTextTheme" parent="@android:style/Widget.EditText">
+        <item name="android:background">@drawable/common_edittext_bg</item>
+        <item name="android:padding">@dimen/my_edit_text_theme_padding</item>
+        <item name="android:drawablePadding">@dimen/my_edit_text_theme_drawable_padding</item>
+        <item name="android:height">@dimen/my_edit_text_theme_height</item>
+    </style>
+
+
+    <style name="dialogProgress" parent="@android:style/Theme.Dialog">
+        <item name="android:progressBarStyle">@style/myProgressBar</item>
     </style>
 
 </resources>

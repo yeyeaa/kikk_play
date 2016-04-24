@@ -1,12 +1,14 @@
 package com.ye.player;
 
-import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+import com.ye.player.common.ui.BaseActivity;
+
+public class MainActivity extends BaseActivity {
 	// public static List<VideoInfo> sysVideoList = null;// 视频信息集合
 
 	@Override
@@ -65,5 +67,10 @@ public class MainActivity extends Activity {
 				 */
 			} while (cursor.moveToNext());
 		}
+	}
+
+	@Override
+	public boolean hasNavigationBar(){
+		return true;
 	}
 }

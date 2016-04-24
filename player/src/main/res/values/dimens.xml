@@ -2,4 +2,9 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- my_edit_text_theme -->
+    <dimen name="my_edit_text_theme_padding">10dp</dimen>
+    <dimen name="my_edit_text_theme_drawable_padding">8dp</dimen>
+    <dimen name="my_edit_text_theme_height">60dp</dimen>
 </resources>

@@ -3,4 +3,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="network_error">网络出错了，请待会再试吧！</string>
+    <string name="empty_warning">暂时没有数据吆</string>
 </resources>
