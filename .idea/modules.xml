@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DanmakuFlameMaster/DanmakuFlameMaster.iml" filepath="$PROJECT_DIR$/DanmakuFlameMaster/DanmakuFlameMaster.iml" />
       <module fileurl="file://$PROJECT_DIR$/kikk.iml" filepath="$PROJECT_DIR$/kikk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kikk_play.iml" filepath="$PROJECT_DIR$/kikk_play.iml" />
       <module fileurl="file://$PROJECT_DIR$/player/player.iml" filepath="$PROJECT_DIR$/player/player.iml" />
     </modules>
   </component>
