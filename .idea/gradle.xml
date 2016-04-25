@@ -10,6 +10,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/DanmakuFlameMaster" />
+            <option value="$PROJECT_DIR$/common-library" />
+            <option value="$PROJECT_DIR$/easyrecyclerview" />
             <option value="$PROJECT_DIR$/player" />
           </set>
         </option>
@@ -17,6 +19,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/DanmakuFlameMaster" />
+            <option value="$PROJECT_DIR$/common-library" />
+            <option value="$PROJECT_DIR$/easyrecyclerview" />
             <option value="$PROJECT_DIR$/player" />
           </set>
         </option>

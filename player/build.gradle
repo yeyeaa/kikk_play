@@ -21,6 +21,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.0.0-alpha1'
     compile files('H:/respository/kikk_play/libs/oldninedroid_library.jar')
     compile files('H:/respository/kikk_play/libs/butterknife-7.0.1.jar')
+    compile project(':easyrecyclerview')
 }
 android {
     compileSdkVersion 23

@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,17 +21,18 @@ import com.ye.player.common.utils.ErrorViewUtil;
 import com.ye.player.widget.CommonNoticeView;
 import com.ye.player.widget.NavigationBar;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class BaseActivity extends AppCompatActivity {
 
     private Dialog waitDialog;
 
+    public NavigationBar navi;
+
     private OnBaseActivityCallbackListener callback;
 
-    private boolean bDestroyed = false;
-
-    public Toolbar mToolbar;
-
-    public NavigationBar navi;
+    private boolean bDetroyed = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +40,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (isFinalTranslucentStatusBar()) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
-
-        if (callback != null) {
-            callback.onCreate(savedInstanceState);
-        }
         if (hasNavigationBar()) {
             navi = new NavigationBar(this);
-            Toolbar.LayoutParams lp = new Toolbar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT);
-            navi.setLayoutParams(lp);
             String title;
             try {
                 title = getPackageManager().getActivityInfo(this.getComponentName(), 0).loadLabel(getPackageManager())
@@ -54,6 +49,46 @@ public abstract class BaseActivity extends AppCompatActivity {
                 navi.setTitle(title);
             } catch (PackageManager.NameNotFoundException e) {
                 e.printStackTrace();
+            }
+
+        }
+
+        if (callback != null) {
+            callback.onCreate(savedInstanceState);
+        }
+    }
+
+    public void setNavTitle(String title) {
+        if (hasNavigationBar()) {
+            navi.setTitle(title);
+        }
+    }
+
+    public void setTitleImage(int resId) {
+        if (hasNavigationBar()) {
+            navi.setTitleImage(resId);
+        }
+    }
+
+    public void setNavTitleView(View view) {
+        if (hasNavigationBar()) {
+            navi.setCustomTitleView(view);
+        }
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        if (hasNavigationBar()) {
+            ((FrameLayout) findViewById(android.R.id.content)).addView(navi, new FrameLayout.LayoutParams(
+                    FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT));
+            if (hasLeftBarButton()) {
+                navi.setLeftButton(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                });
             }
         }
     }
@@ -101,11 +136,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         ErrorViewUtil.clearErrorView();
         super.onDestroy();
-        bDestroyed = true;
+        bDetroyed = true;
     }
 
     public boolean isActivityDestroyed() {
-        return bDestroyed;
+        return bDetroyed;
     }
 
     @Override
@@ -119,6 +154,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         return true;
     }
+
 
     private boolean createWaitDialog(String message) {
         if (isActivityDestroyed()) {
@@ -137,20 +173,21 @@ public abstract class BaseActivity extends AppCompatActivity {
         return true;
     }
 
-    public void showWaitDialog(String message, boolean isCancelable, DialogInterface.OnCancelListener listener) {
-        if (createWaitDialog(message)) {
-            waitDialog.setCanceledOnTouchOutside(false);
-            waitDialog.setCancelable(isCancelable);
-            waitDialog.setOnCancelListener(listener);
-            waitDialog.show();
-        }
-    }
+
 
     public void showWaitDialog(String message) {
         if (createWaitDialog(message)) {
             waitDialog.setCancelable(false);
             waitDialog.show();
         }
+    }
+
+
+    public void dismissWaitDialog() {
+        if (!this.isActivityDestroyed() && waitDialog != null && waitDialog.isShowing()) {
+            waitDialog.dismiss();
+        }
+        waitDialog = null;
     }
 
     public void setRightButton(String str, View.OnClickListener listener) {
@@ -167,14 +204,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         navi.setRightTextBackground(visible);
     }
 
-    public void addNavigationBarToToolBar() {
-        mToolbar.setLogo(null);
-        mToolbar.setNavigationIcon(null);
-        mToolbar.setContentInsetsAbsolute(0, 0);
-        mToolbar.setContentInsetsRelative(0, 0);
-        mToolbar.addView(navi);
-    }
-
     public static interface OnBaseActivityCallbackListener {
 
         public void onCreate(Bundle savedInstanceState);
@@ -187,7 +216,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public boolean hasNavigationBar() {
-        return false;
+        return true;
     }
 
     public boolean hasLeftBarButton() {
@@ -206,5 +235,4 @@ public abstract class BaseActivity extends AppCompatActivity {
         finish();
         overridePendingTransition(0, R.anim.anim_exit);
     }
-
 }

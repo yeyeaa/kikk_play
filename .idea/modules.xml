@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DanmakuFlameMaster/DanmakuFlameMaster.iml" filepath="$PROJECT_DIR$/DanmakuFlameMaster/DanmakuFlameMaster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-library/common-library.iml" filepath="$PROJECT_DIR$/common-library/common-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easyrecyclerview/easyrecyclerview.iml" filepath="$PROJECT_DIR$/easyrecyclerview/easyrecyclerview.iml" />
       <module fileurl="file://$PROJECT_DIR$/kikk_play.iml" filepath="$PROJECT_DIR$/kikk_play.iml" />
       <module fileurl="file://$PROJECT_DIR$/player/player.iml" filepath="$PROJECT_DIR$/player/player.iml" />
     </modules>
