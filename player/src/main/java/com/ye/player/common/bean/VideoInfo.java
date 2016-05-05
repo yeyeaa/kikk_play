@@ -2,7 +2,7 @@ package com.ye.player.common.bean;
 
 public class VideoInfo {
 
-    private int id;
+    private String id;
 
     private String path;
 
@@ -17,6 +17,8 @@ public class VideoInfo {
     private long duration;
 
     private long size;
+
+    private long pause;
 
     public long getDuration() {
         return duration;
@@ -58,11 +60,11 @@ public class VideoInfo {
         this.path = path;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -82,5 +84,12 @@ public class VideoInfo {
         this.danmaPath = danmaPath;
     }
 
+    public long getPause() {
+        return pause;
+    }
+
+    public void setPause(long pause) {
+        this.pause = pause;
+    }
 
 }
