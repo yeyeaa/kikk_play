@@ -32,9 +32,7 @@ public class MenuActivity extends BaseActivity {
 
     }
 
-    @Override
-    public boolean hasNavigationBar() {
-        return true;
+    public boolean hasLeftBarButton() {
+        return false;
     }
-
 }

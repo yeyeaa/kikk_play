@@ -43,4 +43,9 @@ public class SplashActivity extends BaseActivity {
             }, 2000);
         }
     };
+
+    @Override
+    public boolean hasNavigationBar() {
+        return false;
+    }
 }

@@ -30,7 +30,7 @@
 
         <activity
             android:name=".menu.ui.activity.MenuActivity"
-            android:label="menu"
+            android:label="本地视频"
             android:screenOrientation="portrait">
         </activity>
 

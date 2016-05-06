@@ -77,7 +77,8 @@ public class VideoInfoService {
         String[] selectionArgs = new String[]{
                 id+""
         };
-        Cursor thumbCursor = context.getContentResolver().query(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, thumbColumns, selection, selectionArgs, null);
+        Cursor thumbCursor = context.getContentResolver().query(MediaStore.Video.Thumbnails.EXTERNAL_CONTENT_URI, thumbColumns, selection, selectionArgs, null);
+       // Cursor thumbCursor = ((Activity)context).managedQuery(MediaStore.Video.Thumbnails.EXTERNAL_CONTENT_URI, thumbColumns, selection, selectionArgs, null);
 
         if(thumbCursor.moveToFirst()){
             return thumbCursor.getString(thumbCursor.getColumnIndexOrThrow(MediaStore.Video.Thumbnails.DATA));
