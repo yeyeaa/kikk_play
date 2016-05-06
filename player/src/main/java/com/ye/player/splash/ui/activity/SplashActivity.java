@@ -4,12 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.view.View;
 
 import com.ye.player.R;
-import com.ye.player.common.bean.VideoInfo;
 import com.ye.player.common.service.VideoInfoService;
-import com.ye.player.common.ui.BaseActivity;
+import com.ye.player.common.ui.activity.BaseActivity;
 import com.ye.player.menu.ui.activity.MenuActivity;
 
 public class SplashActivity extends BaseActivity {

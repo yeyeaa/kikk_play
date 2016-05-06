@@ -1,4 +1,4 @@
-package com.ye.player.common.ui;
+package com.ye.player.common.ui.activity;
 
 import android.app.Dialog;
 import android.content.DialogInterface;

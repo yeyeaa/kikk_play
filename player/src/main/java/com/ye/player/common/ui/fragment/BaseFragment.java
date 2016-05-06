@@ -1,6 +1,5 @@
-package com.ye.player.common.ui;
+package com.ye.player.common.ui.fragment;
 
-import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ScrollView;
 
+import com.ye.player.common.ui.activity.BaseFragmentActivity;
 import com.ye.player.common.utils.ErrorViewUtil;
 import com.ye.player.widget.NavigationBar;
 
