@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.jude.easyrecyclerview.divider.DividerGridItemDecoration;
-import com.ye.player.R;
 import com.ye.player.common.bean.VideoInfo;
 import com.ye.player.common.service.VideoInfoService;
 import com.ye.player.common.ui.fragment.AbsListFragment;
@@ -20,23 +19,23 @@ public class MenuFragment extends AbsListFragment{
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        videoInfoService = new VideoInfoService(getContext());
+        videoInfoService = new VideoInfoService(getActivity());
     }
 
     @Override
     public RecyclerView.LayoutManager getLayoutManager() {
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2);
         gridLayoutManager.setSpanSizeLookup(adapter.obtainGridSpanSizeLookUp(2));
         return gridLayoutManager;
     }
 
     public RecyclerView.ItemDecoration getItemDecoration() {
-        return new DividerGridItemDecoration(getContext());
+        return new DividerGridItemDecoration(getActivity());
     }
 
     @Override
     protected RecyclerArrayAdapter getRecyclerViewAdapter() {
-        return new GridVideoInfoAdapter(getContext());
+        return new GridVideoInfoAdapter(getActivity());
     }
 
     @Override
@@ -51,10 +50,10 @@ public class MenuFragment extends AbsListFragment{
 
     }
 
-    @Override
+  /*  @Override
     public void onRefresh() {
-        super.onRefresh();;
-    }
+        super.onRefresh();
+    }*/
 
     @Override
     public boolean hasNavigationBar() {

@@ -1,9 +1,9 @@
 package com.ye.player.common.ui.fragment;
 
+import android.app.Fragment;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +15,6 @@ import com.ye.player.common.ui.activity.BaseFragmentActivity;
 import com.ye.player.common.utils.ErrorViewUtil;
 import com.ye.player.widget.NavigationBar;
 
-/**
- * Created by yexiaoyou on 2016/5/6.
- */
 public class BaseFragment extends Fragment {
 
     public NavigationBar navi;

@@ -1,5 +1,7 @@
 package com.ye.player.common.ui.fragment;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
@@ -29,7 +31,7 @@ public abstract class AbsListFragment extends BaseFragment implements SwipeRefre
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         adapter = getRecyclerViewAdapter();
-        adapter.setNoMore(R.layout.view_nomore);
+      //  adapter.setNoMore(R.layout.view_nomore);
         adapter.setError(R.layout.view_error).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,13 +41,14 @@ public abstract class AbsListFragment extends BaseFragment implements SwipeRefre
         adapter.setMore(R.layout.view_more, this);
     }
 
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (contentView == null) {
             contentView = inflater.inflate(R.layout.abs_fragment_list, null);
             recyclerView = (EasyRecyclerView) contentView.findViewById(R.id.rv_products);
             recyclerView.setEmptyView(R.layout.view_nocontent);
-            recyclerView.setRefreshListener(this);
+           // recyclerView.setRefreshListener(this);
             RecyclerView.LayoutManager layoutManager = getLayoutManager();
             recyclerView.setLayoutManager(layoutManager);
 
@@ -190,6 +193,7 @@ public abstract class AbsListFragment extends BaseFragment implements SwipeRefre
     protected void scrollStateChanged(RecyclerView recyclerView, int newState) {
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     protected void scrolled(RecyclerView recyclerView, int dx, int dy) {
         scrollY += dy;
         if (scrollY > 2 * Utils.getDeviceHeight(getContext())) {

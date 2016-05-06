@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/navi_bar_height">
   <!--  <com.jude.easyrecyclerview.EasyRecyclerView
         android:id="@+id/rv_products"
         android:layout_width="match_parent"
@@ -13,10 +12,19 @@
         app:layout_progress="@layout/view_progress"
         app:layout_error="@layout/common_notice" />-->
 
-    <fragment
+  <FrameLayout
+      android:id="@+id/content"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="5dp"
+      android:padding="6dp"
+      android:background="@drawable/menu_fragment_background">
+
+    <!--<fragment
         android:id="@+id/menu_fragment"
         android:name="com.ye.player.menu.ui.fragment.MenuFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />-->
+  </FrameLayout>
 
-</LinearLayout>
+</FrameLayout>
