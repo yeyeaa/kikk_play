@@ -6,10 +6,12 @@ import com.ye.player.R;
 import com.ye.player.common.bean.VideoInfo;
 import com.ye.player.common.service.VideoInfoService;
 import com.ye.player.common.ui.BaseActivity;
+import com.ye.player.common.ui.BaseFragment;
+import com.ye.player.common.ui.BaseFragmentActivity;
 
 import java.util.List;
 
-public class MenuActivity extends BaseActivity {
+public class MenuActivity extends BaseFragmentActivity {
 
     private VideoInfoService videoInfoService;
 
