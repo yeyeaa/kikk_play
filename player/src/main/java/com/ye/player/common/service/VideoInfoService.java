@@ -39,9 +39,7 @@ public class VideoInfoService {
         };
 
         //首先检索SDcard上所有的video
-        //过时方法要换掉
-        Cursor cursor = ((Activity)context).managedQuery(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, mediaColumns, null, null, null);
-
+        Cursor cursor = context.getContentResolver().query(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, mediaColumns, null, null, null);
         List<VideoInfo> videoList = new ArrayList<VideoInfo>();
 
         if(cursor.moveToFirst()){
@@ -79,7 +77,7 @@ public class VideoInfoService {
         String[] selectionArgs = new String[]{
                 id+""
         };
-        Cursor thumbCursor = ((Activity)context).managedQuery(MediaStore.Video.Thumbnails.EXTERNAL_CONTENT_URI, thumbColumns, selection, selectionArgs, null);
+        Cursor thumbCursor = context.getContentResolver().query(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, thumbColumns, selection, selectionArgs, null);
 
         if(thumbCursor.moveToFirst()){
             return thumbCursor.getString(thumbCursor.getColumnIndexOrThrow(MediaStore.Video.Thumbnails.DATA));
