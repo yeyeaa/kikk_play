@@ -1,5 +1,7 @@
 package com.ye.player.common.utils;
 
+import android.content.Context;
+
 import java.io.File;
 
 /**
@@ -18,5 +20,13 @@ public class FileUtils {
             return false;
         }
         return new File(filePath).delete();
+    }
+
+    public static File createDefaultCacheDir(Context paramContext) {
+        File file = new File(paramContext.getApplicationContext().getCacheDir(), "picasso-cache");
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+        return file;
     }
 }

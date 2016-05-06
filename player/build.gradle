@@ -22,6 +22,7 @@ dependencies {
     compile files('H:/respository/kikk_play/libs/oldninedroid_library.jar')
     compile files('H:/respository/kikk_play/libs/butterknife-7.0.1.jar')
     compile project(':easyrecyclerview')
+    compile 'com.squareup.okhttp:okhttp:2.7.5'
 }
 android {
     compileSdkVersion 23
