@@ -32,9 +32,15 @@ public class SplashActivity extends BaseActivity {
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
-            Intent intent = new Intent(SplashActivity.this, MenuActivity.class);
-            startActivity(intent);
+            //暂时延时执行
+            new Handler().postDelayed(new Runnable(){
+                public void run() {
+                    Intent intent = new Intent(SplashActivity.this, MenuActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    SplashActivity.this.finish();
+                }
+            }, 2000);
         }
     };
-
 }

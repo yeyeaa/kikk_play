@@ -14,12 +14,12 @@
         android:scaleType="fitXY"
         android:src="@drawable/login_background" />
 
-   <!-- <ImageView
+    <ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/activity_splash_logo_margin_top"
+        android:layout_marginTop="@dimen/splash_logo_margin_top"
         android:background="@drawable/splash_logo"
-        android:contentDescription="@null" />-->
+        android:contentDescription="@null" />
 </RelativeLayout>

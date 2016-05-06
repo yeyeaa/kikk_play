@@ -216,7 +216,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public boolean hasNavigationBar() {
-        return true;
+        return false;
     }
 
     public boolean hasLeftBarButton() {

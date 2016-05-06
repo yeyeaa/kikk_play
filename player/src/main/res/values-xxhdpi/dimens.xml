@@ -22,4 +22,7 @@
     <dimen name="dialog_progress_text_margin">10dp</dimen>
     <dimen name="dialog_progress_text_size">17sp</dimen>
 
+    <!--splash_activity-->
+    <dimen name="splash_logo_margin_top">200dp</dimen>
+
 </resources>

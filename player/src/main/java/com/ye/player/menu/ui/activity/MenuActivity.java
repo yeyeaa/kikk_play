@@ -32,4 +32,9 @@ public class MenuActivity extends BaseActivity {
 
     }
 
+    @Override
+    public boolean hasNavigationBar() {
+        return true;
+    }
+
 }
