@@ -185,4 +185,10 @@ public void setCustomTitleView(View view) {
         titleViewParentLinearLayout.removeAllViews();
         titleViewParentLinearLayout.addView(view);
         }
+
+
+public void setAlpha(float alpha ) {
+        backgroundLayout.setAlpha(alpha);
+}
+
 }

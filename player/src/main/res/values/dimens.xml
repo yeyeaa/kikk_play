@@ -7,4 +7,7 @@
     <dimen name="my_edit_text_theme_padding">10dp</dimen>
     <dimen name="my_edit_text_theme_drawable_padding">8dp</dimen>
     <dimen name="my_edit_text_theme_height">60dp</dimen>
+
+    <!--media_controller-->
+    <dimen name="title_margin_left">16dp</dimen>
 </resources>

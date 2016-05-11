@@ -235,4 +235,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         finish();
         overridePendingTransition(0, R.anim.anim_exit);
     }
+
+    public void setNaviAlpha(float alpha){
+        if (hasNavigationBar()) {
+            navi.setAlpha(alpha);
+        }
+    }
 }

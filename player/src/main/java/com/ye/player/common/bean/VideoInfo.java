@@ -1,6 +1,8 @@
 package com.ye.player.common.bean;
 
-public class VideoInfo {
+import java.io.Serializable;
+
+public class VideoInfo implements Serializable{
 
     private String id;
 

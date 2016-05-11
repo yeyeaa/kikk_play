@@ -1,5 +1,6 @@
 package com.ye.player.menu.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,7 +11,9 @@ import com.ye.player.common.bean.VideoInfo;
 import com.ye.player.common.service.VideoInfoService;
 import com.ye.player.common.ui.fragment.AbsListFragment;
 import com.ye.player.menu.adapter.GridVideoInfoAdapter;
+import com.ye.player.player.ui.PlayerActivity;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class MenuFragment extends AbsListFragment{
@@ -47,7 +50,10 @@ public class MenuFragment extends AbsListFragment{
 
     @Override
     public void onItemClick(int position) {
-
+        Serializable videoInfo = list.get(position);
+        Intent intent = new Intent(getActivity(), PlayerActivity.class);
+        intent.putExtra("videoInfo", videoInfo);
+        startActivity(intent);
     }
 
   /*  @Override
