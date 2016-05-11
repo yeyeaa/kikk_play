@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.ye.player.R;
@@ -76,6 +77,10 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
     private Button mBtnSendDanmaku;
 
     private Button mBtnSendDanmakuTextAndImage;
+
+    private ImageButton mBtnBack;
+
+    private TextView mTextViewTitle;
 
     private Button mBtnSendDanmakus;
     private DanmakuContext mContext;
@@ -162,7 +167,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
     }
 
     private void initViews() {
-        ((ImageButton)findViewById(R.id.navi_bar_left_btn)).setImageResource(R.drawable.navi_bar_back_img_white);
+        ((ImageButton)findViewById(R.id.navi_bar_left_btn)).setImageResource(R.drawable.back_king);
     }
 
     private BaseDanmakuParser createParser(InputStream stream) {
@@ -194,7 +199,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
     private void findViews() {
 
         mMediaController = findViewById(R.id.media_controller);
-        mBtnRotate = (Button) findViewById(R.id.rotate);
+        /*mBtnRotate = (Button) findViewById(R.id.rotate);
         mBtnHideDanmaku = (Button) findViewById(R.id.btn_hide);
         mBtnShowDanmaku = (Button) findViewById(R.id.btn_show);
         mBtnPauseDanmaku = (Button) findViewById(R.id.btn_pause);
@@ -210,7 +215,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
         mBtnResumeDanmaku.setOnClickListener(this);
         mBtnSendDanmaku.setOnClickListener(this);
         mBtnSendDanmakuTextAndImage.setOnClickListener(this);
-        mBtnSendDanmakus.setOnClickListener(this);
+        mBtnSendDanmakus.setOnClickListener(this);*/
 
         // VideoView
         VideoView mVideoView = (VideoView) findViewById(R.id.videoview);
