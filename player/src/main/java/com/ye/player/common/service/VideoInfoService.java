@@ -81,7 +81,9 @@ public class VideoInfoService {
        // Cursor thumbCursor = ((Activity)context).managedQuery(MediaStore.Video.Thumbnails.EXTERNAL_CONTENT_URI, thumbColumns, selection, selectionArgs, null);
 
         if(thumbCursor.moveToFirst()){
+          //  return "file://"+thumbCursor.getString(thumbCursor.getColumnIndexOrThrow(MediaStore.Video.Thumbnails.DATA));
             return thumbCursor.getString(thumbCursor.getColumnIndexOrThrow(MediaStore.Video.Thumbnails.DATA));
+
         }
         return null;
     }

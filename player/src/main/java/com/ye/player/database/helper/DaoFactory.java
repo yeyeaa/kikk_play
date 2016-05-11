@@ -1,7 +1,6 @@
-package com.ye.player.datebase.helper;
+package com.ye.player.database.helper;
 
-import com.ye.player.common.bean.VideoInfo;
-import com.ye.player.datebase.dao.VideoInfoDao;
+import com.ye.player.database.dao.VideoInfoDao;
 
 public class DaoFactory {
     private volatile static VideoInfoDao videoInfoDao = null;

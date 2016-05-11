@@ -6,24 +6,40 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+        <com.ye.player.common.ui.view.ResizableImageView
             android:id="@+id/thumb"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:background="@drawable/error"/>
         <TextView
             android:id="@+id/duration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"/>
+            android:textSize="14sp"
+            android:background="@drawable/textview_bg"
+            android:layout_alignBottom="@id/thumb"
+            android:textColor="@color/white"
+            android:padding="2dp"/>
     </RelativeLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="@color/black"
         android:id="@+id/title"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:textSize="12sp"
+        android:textColor="@color/gray"
         android:id="@+id/size"/>
 
 </LinearLayout>

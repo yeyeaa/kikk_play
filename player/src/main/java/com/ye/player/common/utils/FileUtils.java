@@ -29,4 +29,16 @@ public class FileUtils {
         }
         return file;
     }
+
+    public static String convertSize(long size){
+        String mSize;
+        if (size > 1024*1024*1024){
+            mSize = size/(1024*1024*1024) + "G";
+        }else if (size >1024*1024){
+            mSize = size/(1024*1024) + "M";
+        }else {
+            mSize = size/(1024) + "KB";
+        }
+        return mSize;
+    }
 }

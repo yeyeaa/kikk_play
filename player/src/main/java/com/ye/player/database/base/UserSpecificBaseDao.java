@@ -1,10 +1,9 @@
-package com.ye.player.datebase.base;
+package com.ye.player.database.base;
 
-import android.app.Application;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.ye.player.KikkApplication;
-import com.ye.player.datebase.helper.UserSpecificDBHelper;
+import com.ye.player.database.helper.UserSpecificDBHelper;
 
 import java.util.HashMap;
 import java.util.Map;

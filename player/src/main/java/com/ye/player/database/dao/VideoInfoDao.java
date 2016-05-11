@@ -1,4 +1,4 @@
-package com.ye.player.datebase.dao;
+package com.ye.player.database.dao;
 
 import android.database.Cursor;
 import android.database.SQLException;
@@ -7,10 +7,9 @@ import android.database.sqlite.SQLiteStatement;
 import android.util.Log;
 
 import com.ye.player.common.bean.VideoInfo;
-import com.ye.player.datebase.base.UserSpecificBaseDao;
+import com.ye.player.database.base.UserSpecificBaseDao;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class VideoInfoDao extends UserSpecificBaseDao {

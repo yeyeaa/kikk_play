@@ -1,10 +1,14 @@
 package com.ye.player.common;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.media.ThumbnailUtils;
+import android.provider.MediaStore;
 import android.widget.ImageView;
 
 import com.squareup.okhttp.Cache;
 import com.squareup.okhttp.OkHttpClient;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Downloader;
 import com.squareup.picasso.OkHttpDownloader;
 import com.squareup.picasso.Picasso;
@@ -46,6 +50,25 @@ public class PicassoImageLoader {
         if (!StringUtil.isEmpty(url)) {
             getInstance().load(url).error(errorResourceId).into(imageView);
         }
+    }
+
+    public static void loadImage(File file, ImageView imageView, int errorResourceId) {
+            getInstance().load(file).error(errorResourceId).into(imageView);
+    }
+
+    public static void loadImage(File file, final ImageView imageView, final String path) {
+        getInstance().load(file).into(imageView, new Callback() {
+            @Override
+            public void onSuccess() {
+
+            }
+
+            @Override
+            public void onError() {
+                Bitmap bitmap = ThumbnailUtils.createVideoThumbnail(path, MediaStore.Images.Thumbnails.MINI_KIND);
+                imageView.setImageBitmap(bitmap);
+            }
+        });
     }
 
     public static void loadImage(String url, ImageView imageView, int errorResourceId, int defaultId) {

@@ -1,10 +1,10 @@
-package com.ye.player.datebase.helper;
+package com.ye.player.database.helper;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.ye.player.datebase.dao.VideoInfoDao;
+import com.ye.player.database.dao.VideoInfoDao;
 
 public class UserSpecificDBHelper extends SQLiteOpenHelper {
 

@@ -193,10 +193,9 @@ public abstract class AbsListFragment extends BaseFragment implements SwipeRefre
     protected void scrollStateChanged(RecyclerView recyclerView, int newState) {
     }
 
-    @TargetApi(Build.VERSION_CODES.M)
     protected void scrolled(RecyclerView recyclerView, int dx, int dy) {
         scrollY += dy;
-        if (scrollY > 2 * Utils.getDeviceHeight(getContext())) {
+        if (scrollY > 2 * Utils.getDeviceHeight(getActivity())) {
             setToTopViewVisibility(View.VISIBLE);
         } else {
             setToTopViewVisibility(View.GONE);
