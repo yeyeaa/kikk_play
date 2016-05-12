@@ -19,12 +19,15 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.ye.player.R;
+import com.ye.player.common.bean.VideoInfo;
 import com.ye.player.common.ui.activity.BaseActivity;
 
 import java.io.IOException;
@@ -59,6 +62,24 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
     private IDanmakuView mDanmakuView;
 
     private View mMediaController;
+
+    private CheckBox btnPause;
+
+    private EditText editTextComment;
+
+    private Button btnSend;
+
+    private ImageButton btnBack;
+
+    private TextView textViewTitle;
+
+    private CheckBox btnHide;
+
+    private VideoInfo videoInfo;
+
+
+
+
 
     public PopupWindow mPopupWindow;
 
@@ -162,12 +183,28 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
+        videoInfo = (VideoInfo) getIntent().getSerializableExtra("videoInfo");
         initViews();
         findViews();
     }
 
     private void initViews() {
-        ((ImageButton)findViewById(R.id.navi_bar_left_btn)).setImageResource(R.drawable.back_king);
+        btnBack = (ImageButton)findViewById(R.id.navi_bar_left_btn);
+        btnBack.setImageResource(R.drawable.back_king);
+
+        textViewTitle = (TextView)findViewById(R.id.title);
+        textViewTitle.setText(videoInfo.getTitle());
+
+        mMediaController = findViewById(R.id.media_controller);
+
+        btnPause = (CheckBox) findViewById(R.id.btn_pause);
+        btnPause.setOnClickListener(this);
+        editTextComment = (EditText) findViewById(R.id.et_comment);
+        btnSend = (Button) findViewById(R.id.btn_send);
+        btnSend.setOnClickListener(this);
+        btnHide = (CheckBox) findViewById(R.id.btn_hide);
+        btnHide.setOnClickListener(this);
+        mMediaController.setOnClickListener(this);
     }
 
     private BaseDanmakuParser createParser(InputStream stream) {
@@ -198,7 +235,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
 
     private void findViews() {
 
-        mMediaController = findViewById(R.id.media_controller);
+       // mMediaController = findViewById(R.id.media_controller);
         /*mBtnRotate = (Button) findViewById(R.id.rotate);
         mBtnHideDanmaku = (Button) findViewById(R.id.btn_hide);
         mBtnShowDanmaku = (Button) findViewById(R.id.btn_show);
@@ -337,6 +374,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
+
         if (v == mMediaController) {
             mMediaController.setVisibility(View.GONE);
         }

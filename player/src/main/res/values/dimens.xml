@@ -10,4 +10,5 @@
 
     <!--media_controller-->
     <dimen name="title_margin_left">16dp</dimen>
+    <dimen name="btn_play_margin_left">32dp</dimen>
 </resources>
