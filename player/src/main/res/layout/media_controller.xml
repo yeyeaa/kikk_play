@@ -9,13 +9,15 @@
         android:layout_height="@dimen/navi_bar_height"
         android:layout_gravity="top"
         android:background="@color/main_red"
-        android:alpha="0.4">
+        android:alpha="0.4"
+        android:clickable="false">
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/navi_bar_height"
-        android:layout_gravity="top">
+        android:layout_gravity="top"
+        android:clickable="false">
 
         <ImageButton
             android:id="@+id/navi_bar_left_btn"
@@ -106,13 +108,15 @@
         android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom">
+        android:layout_gravity="bottom"
+        android:clickable="false">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/navi_bar_height"
             android:background="@color/main_red"
-            android:alpha="0.4">
+            android:alpha="0.4"
+            android:clickable="false">
         </LinearLayout>
 
        <CheckBox

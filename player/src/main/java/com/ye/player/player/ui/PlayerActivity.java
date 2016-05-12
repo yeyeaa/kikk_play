@@ -30,6 +30,9 @@ import com.ye.player.R;
 import com.ye.player.common.bean.VideoInfo;
 import com.ye.player.common.ui.activity.BaseActivity;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -77,6 +80,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
 
     private VideoInfo videoInfo;
 
+    private VideoView mVideoView;
 
 
 
@@ -191,11 +195,12 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
     private void initViews() {
         btnBack = (ImageButton)findViewById(R.id.navi_bar_left_btn);
         btnBack.setImageResource(R.drawable.back_king);
-
+        btnBack.setOnClickListener(this);
         textViewTitle = (TextView)findViewById(R.id.title);
         textViewTitle.setText(videoInfo.getTitle());
 
         mMediaController = findViewById(R.id.media_controller);
+        mMediaController.setOnClickListener(this);
 
         btnPause = (CheckBox) findViewById(R.id.btn_pause);
         btnPause.setOnClickListener(this);
@@ -204,7 +209,9 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
         btnSend.setOnClickListener(this);
         btnHide = (CheckBox) findViewById(R.id.btn_hide);
         btnHide.setOnClickListener(this);
-        mMediaController.setOnClickListener(this);
+
+        mVideoView = (VideoView) findViewById(R.id.videoview);
+
     }
 
     private BaseDanmakuParser createParser(InputStream stream) {
@@ -234,30 +241,6 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
     }
 
     private void findViews() {
-
-       // mMediaController = findViewById(R.id.media_controller);
-        /*mBtnRotate = (Button) findViewById(R.id.rotate);
-        mBtnHideDanmaku = (Button) findViewById(R.id.btn_hide);
-        mBtnShowDanmaku = (Button) findViewById(R.id.btn_show);
-        mBtnPauseDanmaku = (Button) findViewById(R.id.btn_pause);
-        mBtnResumeDanmaku = (Button) findViewById(R.id.btn_resume);
-        mBtnSendDanmaku = (Button) findViewById(R.id.btn_send);
-        mBtnSendDanmakuTextAndImage = (Button) findViewById(R.id.btn_send_image_text);
-        mBtnSendDanmakus = (Button) findViewById(R.id.btn_send_danmakus);
-        mBtnRotate.setOnClickListener(this);
-        mBtnHideDanmaku.setOnClickListener(this);
-        mMediaController.setOnClickListener(this);
-        mBtnShowDanmaku.setOnClickListener(this);
-        mBtnPauseDanmaku.setOnClickListener(this);
-        mBtnResumeDanmaku.setOnClickListener(this);
-        mBtnSendDanmaku.setOnClickListener(this);
-        mBtnSendDanmakuTextAndImage.setOnClickListener(this);
-        mBtnSendDanmakus.setOnClickListener(this);*/
-
-        // VideoView
-        VideoView mVideoView = (VideoView) findViewById(R.id.videoview);
-        // DanmakuView
-
         // 设置最大显示行数
         HashMap<Integer, Integer> maxLinesPair = new HashMap<Integer, Integer>();
         maxLinesPair.put(BaseDanmaku.TYPE_SCROLL_RL, 5); // 滚动弹幕最大显示3行
@@ -274,7 +257,18 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
                 .setMaximumLines(maxLinesPair)
                 .preventOverlapping(overlappingEnablePair);
         if (mDanmakuView != null) {
-            mParser = createParser(this.getResources().openRawResource(R.raw.comments));
+           // mParser = createParser(this.getResources().openRawResource(R.raw.comments));
+            if (videoInfo.getDanmaPath() != null){
+                File file = new File(videoInfo.getDanmaPath());
+                try {
+                    InputStream inputStream = new FileInputStream(file);
+
+                    mParser = createParser(inputStream);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+
             mDanmakuView.setCallback(new master.flame.danmaku.controller.DrawHandler.Callback() {
                 @Override
                 public void updateTimer(DanmakuTimer timer) {
@@ -307,7 +301,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
                 }
             });
             mDanmakuView.prepare(mParser, mContext);
-            mDanmakuView.showFPS(true);
+            mDanmakuView.showFPS(false);
             mDanmakuView.enableDanmakuDrawingCache(true);
             ((View) mDanmakuView).setOnClickListener(new View.OnClickListener() {
 
@@ -325,7 +319,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
                     mediaPlayer.start();
                 }
             });
-            mVideoView.setVideoPath(Environment.getExternalStorageDirectory() + "/1.flv");
+            mVideoView.setVideoPath(videoInfo.getPath());
         }
 
     }
@@ -378,8 +372,41 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
         if (v == mMediaController) {
             mMediaController.setVisibility(View.GONE);
         }
-        if (mDanmakuView == null || !mDanmakuView.isPrepared())
-            return;
+       /* if (mDanmakuView == null || !mDanmakuView.isPrepared())
+            return;*/
+        if (v == btnBack) {
+            this.finish();
+        } else if (v ==btnPause) {
+            if (btnPause.isChecked()){
+                mVideoView.pause();
+                if (mDanmakuView != null && mDanmakuView.isPrepared())
+                mDanmakuView.pause();
+            } else {
+                mVideoView.start();
+                if (mDanmakuView != null && mDanmakuView.isPrepared())
+                    mDanmakuView.resume();
+            }
+        } else if (v == btnSend && mDanmakuView != null && mDanmakuView.isPrepared()){
+            sendComment();
+        } else if (v ==btnHide && mDanmakuView != null && mDanmakuView.isPrepared()){
+            if (btnHide.isChecked()) {
+                mDanmakuView.hide();
+            } else {
+                mDanmakuView.show();
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         if (v == mBtnRotate) {
             setRequestedOrientation(getRequestedOrientation() == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE ? ActivityInfo.SCREEN_ORIENTATION_PORTRAIT : ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         } else if (v == mBtnHideDanmaku) {
@@ -409,6 +436,10 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
                 mBtnSendDanmakus.setTag(false);
             }
         }
+    }
+
+    private void sendComment() {
+
     }
 
     Timer timer = new Timer();

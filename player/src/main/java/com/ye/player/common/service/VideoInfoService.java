@@ -91,7 +91,9 @@ public class VideoInfoService {
     private String getDanmaPath(String videoPath) {
         String danmaPath = videoPath.substring(0,videoPath.lastIndexOf("."))+".xml";
         if (FileUtils.isFileExists(danmaPath)) {
-            return "file://" + danmaPath;
+          //  return "file://" + danmaPath;
+            return danmaPath;
+
         }else {
             return null;
         }

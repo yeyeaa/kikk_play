@@ -6,8 +6,8 @@
 
     <VideoView
         android:id="@+id/videoview"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <master.flame.danmaku.ui.widget.DanmakuView
         android:id="@+id/sv_danmaku"
@@ -16,7 +16,7 @@
 
     <include android:id="@+id/media_controller"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="match_parent"
         layout="@layout/media_controller" />
 
 </FrameLayout>
