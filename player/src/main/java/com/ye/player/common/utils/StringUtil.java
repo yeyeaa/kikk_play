@@ -1,7 +1,13 @@
 package com.ye.player.common.utils;
 
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.text.Html;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.text.Spanned;
+import android.text.style.BackgroundColorSpan;
+import android.text.style.ImageSpan;
 
 import java.text.NumberFormat;
 import java.text.ParsePosition;
@@ -270,5 +276,15 @@ public class StringUtil {
 			return false;
 		}
 		return true;
+	}
+
+	public static SpannableStringBuilder createSpannable(Drawable drawable) {
+		String text = "bitmap";
+		SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text);
+		ImageSpan span = new ImageSpan(drawable);//ImageSpan.ALIGN_BOTTOM);
+		spannableStringBuilder.setSpan(span, 0, text.length(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+		spannableStringBuilder.append("图文混排");
+		spannableStringBuilder.setSpan(new BackgroundColorSpan(Color.parseColor("#8A2233B1")), 0, spannableStringBuilder.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+		return spannableStringBuilder;
 	}
 }

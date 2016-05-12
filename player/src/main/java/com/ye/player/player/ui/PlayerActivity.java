@@ -29,6 +29,8 @@ import android.widget.VideoView;
 import com.ye.player.R;
 import com.ye.player.common.bean.VideoInfo;
 import com.ye.player.common.ui.activity.BaseActivity;
+import com.ye.player.common.utils.StringUtil;
+import com.ye.player.player.adapter.CacheStufferAdapter;
 import com.ye.player.player.widget.MyVideoView;
 
 import java.io.File;
@@ -83,7 +85,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
 
     private MyVideoView mVideoView;
 
-
+    private DanmakuContext mContext;
 
 
     public PopupWindow mPopupWindow;
@@ -109,8 +111,11 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
     private TextView mTextViewTitle;
 
     private Button mBtnSendDanmakus;
-    private DanmakuContext mContext;
-    private BaseCacheStuffer.Proxy mCacheStufferAdapter = new BaseCacheStuffer.Proxy() {
+
+    private CacheStufferAdapter mCacheStufferAdapter = new CacheStufferAdapter(mDanmakuView);
+
+
+   /* private BaseCacheStuffer.Proxy mCacheStufferAdapter = new BaseCacheStuffer.Proxy() {
 
         private Drawable mDrawable;
 
@@ -157,7 +162,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
         public void releaseResource(BaseDanmaku danmaku) {
             // TODO 重要:清理含有ImageSpan的text中的一些占用内存的资源 例如drawable
         }
-    };
+    };*/
 
     /**
      * 绘制背景(自定义弹幕样式)
@@ -481,7 +486,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
         BaseDanmaku danmaku = mContext.mDanmakuFactory.createDanmaku(BaseDanmaku.TYPE_SCROLL_RL);
         Drawable drawable = getResources().getDrawable(R.drawable.ic_launcher);
         drawable.setBounds(0, 0, 100, 100);
-        SpannableStringBuilder spannable = createSpannable(drawable);
+        SpannableStringBuilder spannable = StringUtil.createSpannable(drawable);
         danmaku.text = spannable;
         danmaku.padding = 5;
         danmaku.priority = 1;  // 一定会显示, 一般用于本机发送的弹幕
@@ -494,7 +499,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
         mDanmakuView.addDanmaku(danmaku);
     }
 
-    private SpannableStringBuilder createSpannable(Drawable drawable) {
+    /*private SpannableStringBuilder createSpannable(Drawable drawable) {
         String text = "bitmap";
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text);
         ImageSpan span = new ImageSpan(drawable);//ImageSpan.ALIGN_BOTTOM);
@@ -502,7 +507,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
         spannableStringBuilder.append("图文混排");
         spannableStringBuilder.setSpan(new BackgroundColorSpan(Color.parseColor("#8A2233B1")), 0, spannableStringBuilder.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         return spannableStringBuilder;
-    }
+    }*/
 
     public boolean hasNavigationBar() {
         return false;
