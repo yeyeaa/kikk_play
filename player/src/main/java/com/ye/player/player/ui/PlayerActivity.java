@@ -29,6 +29,7 @@ import android.widget.VideoView;
 import com.ye.player.R;
 import com.ye.player.common.bean.VideoInfo;
 import com.ye.player.common.ui.activity.BaseActivity;
+import com.ye.player.player.widget.MyVideoView;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -80,7 +81,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
 
     private VideoInfo videoInfo;
 
-    private VideoView mVideoView;
+    private MyVideoView mVideoView;
 
 
 
@@ -210,7 +211,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
         btnHide = (CheckBox) findViewById(R.id.btn_hide);
         btnHide.setOnClickListener(this);
 
-        mVideoView = (VideoView) findViewById(R.id.videoview);
+        mVideoView = (MyVideoView) findViewById(R.id.videoview);
 
     }
 
