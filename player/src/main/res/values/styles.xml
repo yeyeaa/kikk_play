@@ -42,4 +42,13 @@
         <item name="android:progressBarStyle">@style/myProgressBar</item>
     </style>
 
+    <style name="mSeekBar" parent="@android:style/Widget.SeekBar">
+        <item name="android:maxHeight">@dimen/navi_bar_height</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:progressDrawable">@drawable/seekbar_horizontal</item>
+        <item name="android:minHeight">@dimen/navi_bar_height</item>
+        <item name="android:thumb">@null</item>
+        <item name="android:thumbOffset">0dip</item>
+    </style>
 </resources>
