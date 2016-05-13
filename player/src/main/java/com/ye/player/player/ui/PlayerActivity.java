@@ -75,7 +75,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
 
     private CacheStufferAdapter mCacheStufferAdapter = new CacheStufferAdapter(mDanmakuView);
 
-    private static final int DELAY_MISS = 3000;
+    private static final int DELAY_MISS = 2000;
 
     private Handler mHandler = new Handler();
 
@@ -115,6 +115,15 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
         btnHide.setOnClickListener(this);
 
         mVideoView = (MyVideoView) findViewById(R.id.videoview);
+
+        mVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener()
+        {
+            @Override
+            public void onCompletion(MediaPlayer mp)
+            {
+                PlayerActivity.this.finish();
+            }
+        });
 
     }
 
