@@ -83,6 +83,8 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
 
     private TimeOutTask task;
 
+    private int currentPosition = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -232,23 +234,23 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
     @Override
     protected void onPause() {
         super.onPause();
+
         if (mDanmakuView != null && mDanmakuView.isPrepared()) {
             mDanmakuView.pause();
         }
         if (mVideoView != null){
             mVideoView.pause();
+            currentPosition = mVideoView.getCurrentPosition();
         }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (mDanmakuView != null && mDanmakuView.isPrepared() && mDanmakuView.isPaused()) {
-            mDanmakuView.resume();
-        }
-        if (mVideoView != null){
-            mVideoView.start();
-        }
+        mVideoView.seekTo(currentPosition);
+        mVideoView.start();
+        mDanmakuView.resume();
+        btnPause.setChecked(false);
     }
 
     @Override
@@ -289,6 +291,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
         } else if (v ==btnPause) {
             if (btnPause.isChecked()){
                 mVideoView.pause();
+                currentPosition = mVideoView.getCurrentPosition();
                 if (mDanmakuView != null && mDanmakuView.isPrepared())
                 mDanmakuView.pause();
             } else {
