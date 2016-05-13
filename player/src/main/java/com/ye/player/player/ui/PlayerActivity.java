@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.ye.player.R;
@@ -73,6 +74,8 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
 
     private BaseDanmakuParser mParser;
 
+    private SeekBar seekBar;
+
     private CacheStufferAdapter mCacheStufferAdapter = new CacheStufferAdapter(mDanmakuView);
 
     private static final int DELAY_MISS = 2000;
@@ -97,6 +100,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
     }
 
     private void initViews() {
+        seekBar = (SeekBar)findViewById(R.id.seekbar) ;
         btnBack = (ImageButton)findViewById(R.id.navi_bar_left_btn);
         btnBack.setImageResource(R.drawable.back_king);
         btnBack.setOnClickListener(this);
@@ -233,6 +237,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
                 @Override
                 public void onPrepared(MediaPlayer mediaPlayer) {
                     mediaPlayer.start();
+                    mHandler.post(run);
                 }
             });
             mVideoView.setVideoPath(videoInfo.getPath());
@@ -264,6 +269,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     protected void onDestroy() {
+        mHandler.removeCallbacks(run);
         super.onDestroy();
         if (mDanmakuView != null) {
             // dont forget release!
@@ -400,6 +406,19 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
         mDanmakuView.addDanmaku(danmaku);
     }
 
+    private Runnable run = new Runnable() {
+        int buffer, currentPosition, duration;
+
+        public void run() {
+            // 获得当前播放时间和当前视频的长度
+            currentPosition = mVideoView.getCurrentPosition();
+            duration = mVideoView.getDuration();
+            int time = ((currentPosition * 100) / duration);
+            // 设置进度条的主要进度，表示当前的播放时间
+            seekBar.setProgress(time);
+            mHandler.postDelayed(run, 1000);
+        }
+    };
 
     public boolean hasNavigationBar() {
         return false;
