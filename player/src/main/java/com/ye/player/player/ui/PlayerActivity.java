@@ -169,6 +169,8 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
+            } else {
+                mParser = createParser(this.getResources().openRawResource(R.raw.comments));
             }
 
             mDanmakuView.setCallback(new master.flame.danmaku.controller.DrawHandler.Callback() {
