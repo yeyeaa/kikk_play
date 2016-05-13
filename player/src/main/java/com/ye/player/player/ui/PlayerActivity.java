@@ -363,8 +363,6 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
                 public void run() {
                     if (!editTextComment.hasFocus()&&mMediaController!=null){
                         mMediaController.setVisibility(View.GONE);
-                    } else {
-                        timer.cancel();
                     }
                 }
             });
