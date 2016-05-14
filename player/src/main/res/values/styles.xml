@@ -51,4 +51,97 @@
         <item name="android:thumb">@null</item>
         <item name="android:thumbOffset">0dip</item>
     </style>
+
+    <style name="custom_divider">
+        <item name="android:background">@color/greys</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_height</item>
+    </style>
+
+    <style name="button_red_long">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/button_red_long_height</item>
+        <item name="android:layout_marginLeft">@dimen/button_red_long_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/button_red_long_margin_right</item>
+        <item name="android:layout_marginTop">@dimen/button_red_long_margin_top</item>
+        <item name="android:textSize">@dimen/button_red_long_text_size</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/button_primary_red</item>
+    </style>
+
+    <style name="button_red_short">
+        <item name="android:layout_width">@dimen/button_red_short_width</item>
+        <item name="android:layout_height">@dimen/button_red_short_height</item>
+        <item name="android:layout_marginLeft">@dimen/button_red_short_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/button_red_short_margin_right</item>
+        <item name="android:layout_marginTop">@dimen/button_red_short_margin_top</item>
+        <item name="android:textSize">@dimen/custom_dialog_text_title_text_size_medium</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/button_primary_red</item>
+    </style>
+
+    <style name="new_setting_img_arrow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:src">@drawable/item_view_right_arrow</item>
+        <item name="android:contentDescription">@null</item>
+    </style>
+
+    <style name="new_setting_relative_layout_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/setting_relative_advantage_layout_item_height
+        </item>
+        <item name="android:paddingLeft">@dimen/setting_relative_layout_item_padding</item>
+        <item name="android:paddingRight">@dimen/setting_relative_layout_item_padding</item>
+        <item name="android:background">@drawable/common_item_press_style</item>
+    </style>
+
+    <style name="new_setting_grey_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">@color/tab_text_color_normal</item>
+        <item name="android:textSize">@dimen/setting_grey_text_size</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">@dimen/setting_grey_text_drawable_padding</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="new_setting_divider_left">
+        <item name="android:background">@color/line_grey</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/divider_height</item>
+        <item name="android:layout_marginLeft">@dimen/setting_relative_layout_item_padding</item>
+        <item name="android:layout_marginRight">@dimen/setting_relative_layout_item_padding</item>
+    </style>
+
+    <style name="new_setting_about_layout_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/setting_about_layout_item_height</item>
+        <item name="android:paddingLeft">@dimen/setting_relative_layout_item_padding</item>
+        <item name="android:paddingRight">@dimen/setting_relative_layout_item_padding</item>
+        <item name="android:background">@drawable/common_item_press_style</item>
+    </style>
+
+    <style name="new_setting_about">
+        <item name="android:background">@color/line_grey</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/divider_height</item>
+        <item name="android:layout_marginLeft">@dimen/custom_icon_margin_bottom</item>
+        <item name="android:layout_marginRight">@dimen/custom_icon_margin_bottom</item>
+    </style>
+
+    <style name="new_setting_grey_right_note">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">@color/grey_setting_right_note</item>
+        <item name="android:textSize">@dimen/setting_grey_number_size</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingRight">@dimen/setting_grey_right_note_padding_right</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
 </resources>

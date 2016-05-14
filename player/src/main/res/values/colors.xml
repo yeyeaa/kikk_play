@@ -11,5 +11,17 @@
     <color name="gray">#808080</color>
     <color name="black">#000000</color>
     <color name="light_white">#dddddddd</color>
+    <color name="edit_text_hint">#b7b7b7</color>
+    <color name="greys">#e6e6e6</color>
+    <color name="main_button_pressed">#c01104</color>
+    <color name="main_button_newbie">#f5aea8</color>
+    <color name="main_button_press">#ca2013</color>
+    <color name="login_pink_red">#ff8888</color>
+    <color name="bottom_bar_bg">#eceaea</color>
+    <color name="invite_title_text_color">#4c4c4c</color>
+    <color name="tab_text_color_normal">#555555</color>
+    <color name="line_grey">#e0e0e0</color>
+    <color name="tab_text_color_focus">#e63528</color>
+    <color name="grey_setting_right_note">#999999</color>
 
 </resources>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/splash_logo_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/splash_logo" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="6"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_login_edit_layout_margin"
+            android:layout_marginRight="@dimen/activity_login_edit_layout_margin"
+            android:background="@drawable/item_view_bg"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/user_name_imput_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_login_edit_layout_height" >
+
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_login_edit_text_margin_left"
+                    android:layout_marginRight="@dimen/activity_login_edit_text_margin_right"
+                    android:textColor="#4c4c4c"
+                    android:textColorHint="@color/edit_text_hint"
+                    android:textSize="@dimen/activity_login_edit_text_size"
+                    android:gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:hint="@string/username_hint"
+                    android:background="@null"
+                    android:inputType="phone"
+                    android:maxLength="32"
+                    android:singleLine="true" />
+
+                <RelativeLayout
+                    android:id="@+id/delete_username"
+                    android:layout_width="@dimen/activity_login_delete_layout_width"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:layout_width="@dimen/activity_login_delete_img_width"
+                        android:layout_height="@dimen/activity_login_delete_img_height"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/delete" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <View style="@style/custom_divider" />
+
+            <RelativeLayout
+                android:id="@+id/password_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_login_edit_layout_height" >
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_login_edit_text_margin_left"
+                    android:layout_marginRight="@dimen/activity_login_edit_text_margin_right"
+                    android:textColor="#4c4c4c"
+                    android:textColorHint="@color/edit_text_hint"
+                    android:textSize="@dimen/activity_login_edit_text_size"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionDone"
+                    android:background="@null"
+                    android:layout_centerVertical="true"
+                    android:hint="@string/password_hint"
+                    android:inputType="textPassword" />
+
+                <RelativeLayout
+                    android:id="@+id/delete_pwd"
+                    android:layout_width="@dimen/activity_login_delete_layout_width"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:layout_width="@dimen/activity_login_delete_img_width"
+                        android:layout_height="@dimen/activity_login_delete_img_height"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/delete" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/land"
+            style="@style/button_red_long"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/linearLayout1"
+            android:background="@drawable/login_pink_btn_bg"
+            android:text="@string/login" />
+
+       <!-- <TextView
+            android:id="@+id/forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/land"
+            android:layout_below="@+id/land"
+            android:layout_marginTop="@dimen/activity_login_forgot_password_text_margin_top"
+            android:layout_marginRight="@dimen/activity_login_forgot_password_text_margin_Right"
+            android:text="@string/find_password"
+            android:textColor="@color/white"
+            android:textSize="@dimen/activity_login_forgot_password_text_size" />-->
+    </RelativeLayout>
+
+   <!-- <Button
+        android:id="@+id/reg"
+        style="@style/button_red_short"
+        android:layout_gravity="center_horizontal"
+        android:background="@null"
+        android:text="@string/try_now"
+        android:textColor="@color/white" />-->
+
+</LinearLayout>

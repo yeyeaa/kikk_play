@@ -37,6 +37,24 @@
         </activity>
 
         <activity
+            android:name=".account.ui.LoginActivity"
+            android:label="登录"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".account.ui.SeetingActivity"
+            android:label="设置"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".account.ui.AboutActivity"
+            android:label="关于"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
             android:name=".player.ui.PlayerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/FullScreenTheme"

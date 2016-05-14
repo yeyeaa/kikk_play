@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:paddingTop="@dimen/navi_bar_height">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relayout"
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/temp"
+                        android:clickable="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/logo" />
+
+                    <TextView
+                        android:id="@+id/text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="2dp"
+                        android:padding="0dp"
+                        android:text="Kikk"
+                        android:textColor="@color/tab_text_color_focus"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="0dp"
+                        android:text="弹幕播放器"
+                        android:textColor="@color/grey_setting_right_note"
+                        android:textSize="11.5sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relayout"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/creative_into_relative"
+                    style="@style/new_setting_about_layout_item">
+
+                    <TextView
+                        style="@style/new_setting_grey_text"
+                        android:text="作者： 于同学" />
+                </RelativeLayout>
+
+                <View style="@style/new_setting_about" />
+
+                <RelativeLayout
+                    android:id="@+id/function_into_relative"
+                    style="@style/new_setting_about_layout_item">
+
+                    <TextView
+                        style="@style/new_setting_grey_text"
+                        android:text="联系方式：shixihenhaoji@163.com" />
+                </RelativeLayout>
+
+                <View style="@style/new_setting_about" />
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/check_update_relative"
+                android:layout_below="@+id/layout"
+                android:layout_marginTop="30dp"
+                android:clickable="true"
+                style="@style/new_setting_about_layout_item">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/new_setting_grey_text"
+                    android:text="检查更新" />
+
+                <ImageView
+                    android:id="@+id/setting_img_update_right_arrow"
+                    style="@style/new_setting_img_arrow"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/setting_current_version"
+                    style="@style/new_setting_grey_right_note"
+                    android:layout_toLeftOf="@id/setting_img_update_right_arrow"
+                    android:text="" />
+
+                <ImageView
+                    android:id="@+id/new_version_notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="7dp"
+                    android:layout_toRightOf="@+id/textView2"
+                    android:visibility="invisible"
+                    android:src="@drawable/icon_gengxin" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/check_update_relative"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+              <!--  <TextView
+                    android:id="@+id/user_protocol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/about_huaqian_user_protocol_margin_bottom"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/about_text_color"
+                    android:textSize="@dimen/setting_grey_number_size" />-->
+
+                <!--<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:padding="0dp"
+                    android:text="客服电话："
+                    android:textColor="@color/grey_setting_right_note"
+                    android:textSize="@dimen/setting_grey_text_text_size" />-->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:padding="0dp"
+                    android:text="感谢您的使用 "
+                    android:textColor="@color/grey_setting_right_note"
+                    android:textSize="@dimen/setting_grey_text_text_size" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>
