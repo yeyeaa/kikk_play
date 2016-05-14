@@ -7,6 +7,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.SpannableStringBuilder;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -22,6 +23,7 @@ import com.ye.player.R;
 import com.ye.player.common.bean.VideoInfo;
 import com.ye.player.common.ui.activity.BaseActivity;
 import com.ye.player.common.utils.StringUtil;
+import com.ye.player.common.utils.TimeUtils;
 import com.ye.player.player.adapter.CacheStufferAdapter;
 import com.ye.player.player.widget.MyVideoView;
 
@@ -47,6 +49,7 @@ import master.flame.danmaku.danmaku.model.android.SpannedCacheStuffer;
 import master.flame.danmaku.danmaku.parser.BaseDanmakuParser;
 import master.flame.danmaku.danmaku.parser.IDataSource;
 import master.flame.danmaku.danmaku.parser.android.BiliDanmukuParser;
+import master.flame.danmaku.ui.widget.DanmakuView;
 
 public class PlayerActivity extends BaseActivity implements View.OnClickListener {
 
@@ -64,6 +67,8 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
 
     private TextView textViewTitle;
 
+    private TextView textViewTime;
+
     private CheckBox btnHide;
 
     private VideoInfo videoInfo;
@@ -78,7 +83,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
 
     private CacheStufferAdapter mCacheStufferAdapter = new CacheStufferAdapter(mDanmakuView);
 
-    private static final int DELAY_MISS = 2000;
+    private static final int DELAY_MISS = 4000;
 
     private Handler mHandler = new Handler();
 
@@ -101,11 +106,29 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
 
     private void initViews() {
         seekBar = (SeekBar)findViewById(R.id.seekbar) ;
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                mVideoView.seekTo(mVideoView.getDuration()*seekBar.getProgress()/100);
+                mDanmakuView.seekTo((long)mVideoView.getDuration()*seekBar.getProgress()/100);
+            }
+        });
         btnBack = (ImageButton)findViewById(R.id.navi_bar_left_btn);
         btnBack.setImageResource(R.drawable.back_king);
         btnBack.setOnClickListener(this);
         textViewTitle = (TextView)findViewById(R.id.title);
         textViewTitle.setText(videoInfo.getTitle());
+        textViewTime = (TextView)findViewById(R.id.time) ;
 
         mMediaController = findViewById(R.id.media_controller);
         mMediaController.setOnClickListener(this);
@@ -407,16 +430,17 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
     }
 
     private Runnable run = new Runnable() {
-        int buffer, currentPosition, duration;
+        int currentPosition, duration;
 
         public void run() {
             // 获得当前播放时间和当前视频的长度
             currentPosition = mVideoView.getCurrentPosition();
             duration = mVideoView.getDuration();
-            int time = ((currentPosition * 100) / duration);
+            int progress = ((currentPosition * 100) / duration);
             // 设置进度条的主要进度，表示当前的播放时间
-            seekBar.setProgress(time);
-            mHandler.postDelayed(run, 1000);
+            seekBar.setProgress(progress);
+            textViewTime.setText(TimeUtils.longToString(currentPosition)+"/"+TimeUtils.longToString(videoInfo.getDuration()));
+            mHandler.postDelayed(run, 500);
         }
     };
 
