@@ -40,7 +40,6 @@
     <dimen name="button_red_short_margin_right">20dp</dimen>
     <dimen name="button_red_short_margin_top">20dp</dimen>
     <dimen name="button_red_short_text_size">17sp</dimen>
-    <dimen name="custom_dialog_text_title_text_size_medium">15sp</dimen>
 
    <!-- seeting activity-->
     <dimen name="setting_relative_layout_icon_height">98dp</dimen>
@@ -55,5 +54,73 @@
     <dimen name="custom_icon_margin_bottom">10dp</dimen>
     <dimen name="setting_grey_number_size">13.5sp</dimen>
     <dimen name="setting_grey_right_note_padding_right">10dp</dimen>
+
+   <!-- my_account-->
+    <dimen name="share_text_text_size">12sp</dimen>
+    <dimen name="setting_relative_layout_item_padding_left">15dp</dimen>
+    <dimen name="activity_my_account_notice_dot_margin">5dp</dimen>
+
+    <!-- custom_dialog_layout -->
+    <dimen name="custom_dialog_divider_margin">17dp</dimen>
+    <dimen name="custom_dialog_birthday_divider_margin">14dp</dimen>
+    <dimen name="custom_dialog_content_header_minHeight">60dp</dimen>
+    <dimen name="custom_dialog_content_header_padding_left">14dp</dimen>
+    <dimen name="custom_dialog_content_header_padding_right">12dp</dimen>
+    <dimen name="custom_dialog_layout_padding_right">16dp</dimen>
+    <dimen name="custom_dialog_text_title_text_size_small">19sp</dimen>
+    <dimen name="custom_dialog_text_title_text_size_medium">15sp</dimen>
+    <dimen name="custom_dialog_text_title_text_size_birthday">6sp</dimen>
+    <dimen name="custom_dialog_text_title_text_size_large">19sp</dimen>
+    <dimen name="custom_dialog_text_subtitle_text_size_small">15sp</dimen>
+    <dimen name="custom_dialog_text_subtitle_text_size_medium">15sp</dimen>
+    <dimen name="custom_dialog_text_subtitle_text_size_large">19sp</dimen>
+    <dimen name="custom_dialog_content_body_minHeight">62dp</dimen>
+    <dimen name="custom_dialog_content_body_padding_left">17dp</dimen>
+    <dimen name="custom_dialog_content_body_padding_right">15dp</dimen>
+    <dimen name="custom_dialog_content_body_padding_top">15dp</dimen>
+    <dimen name="custom_dialog_content_expand_padding_left">17dp</dimen>
+    <dimen name="custom_dialog_content_expand_padding_right">27dp</dimen>
+    <dimen name="custom_dialog_content_expand_padding_bottom">10dp</dimen>
+    <dimen name="custom_dialog_content_footer_minHeight">72dp</dimen>
+    <dimen name="custom_dialog_content_footer_padding">17dp</dimen>
+    <dimen name="custom_dialog_content_footer_padding_bottom">10dp</dimen>
+    <dimen name="custom_dialog_content_footer_bottom">10dp</dimen>
+    <dimen name="custom_dialog_recommend_text_size_medium">12sp</dimen>
+    <dimen name="custom_dialog_recommend_layout_margin_top">5dp</dimen>
+    <dimen name="custom_dialog_recommend_layout_margin_bottom">23dp</dimen>
+
+    <!-- dialog_button_long -->
+    <dimen name="dialog_button_long_height">48dp</dimen>
+    <dimen name="dialog_button_long_text_size">17sp</dimen>
+
+    <!-- button_white_short -->
+    <dimen name="button_white_short_width">125dp</dimen>
+
+
+    <!-- activity_modify_nickname -->
+    <dimen name="activity_modify_nickname_edit_layout_height">86dp</dimen>
+    <dimen name="activity_modify_nickname_edit_text_margin_left">16dp</dimen>
+    <dimen name="activity_modify_nickname_edit_text_margin_right">5dp</dimen>
+    <dimen name="activity_modify_nickname_edit_text_size">17sp</dimen>
+    <dimen name="setting_relative_layout_item_height">43dp</dimen>
+
+    <!-- choose_msg_type -->
+    <dimen name="choose_msg_type_title_text_layout_height">47dp</dimen>
+    <dimen name="choose_msg_type_title_text_layout_padding_left">20dp</dimen>
+    <dimen name="choose_msg_type_title_text_layout_padding_top">10dp</dimen>
+    <dimen name="choose_msg_type_title_text_layout_padding_right">20dp</dimen>
+    <dimen name="choose_msg_type_title_text_layout_padding_bottom">10dp</dimen>
+
+    <!--    dialog birthday-->
+    <dimen name="divider_layout_margin_left">9dp</dimen>
+    <dimen name="divider_margin_right">14dp</dimen>
+    <dimen name="divider_margin_top">13dp</dimen>
+    <dimen name="divider_margin_bottom">23dp</dimen>
+
+    <!--modify password-->
+    <dimen name="divider_height_line">0.5dp</dimen>
+    <dimen name="activity_set_new_modify_password_edit_height">55dp</dimen>
+    <dimen name="activity_set_new_modify_password_edit_margin_left">16dp</dimen>
+    <dimen name="activity_set_new_modify_password_edit_margin_right">5dp</dimen>
 
 </resources>

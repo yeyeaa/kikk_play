@@ -23,5 +23,11 @@
     <color name="line_grey">#e0e0e0</color>
     <color name="tab_text_color_focus">#e63528</color>
     <color name="grey_setting_right_note">#999999</color>
+    <color name="main_grey_button_pressed">#a1a1a1</color>
+    <color name="main_grey_button">#b3b3b3</color>
+    <color name="red_shop">#e63528</color>
+    <color name="text_black">#4e4c4a</color>
+    <color name="black_order">#555555</color>
+    <color name="color_gradiant">#00000000</color>
 
 </resources>

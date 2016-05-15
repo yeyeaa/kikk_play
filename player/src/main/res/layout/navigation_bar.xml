@@ -78,7 +78,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/setting_relative_layout_item_padding"
-            android:textColor="@color/white"
+            android:textColor="@color/king"
             android:textSize="@dimen/apk_list_item_name_text_size"
             android:visibility="gone" />
 

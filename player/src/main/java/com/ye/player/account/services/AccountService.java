@@ -14,7 +14,11 @@ public class AccountService {
 	}
 
 	public boolean logIn(String name,String password){
-		if (name.equals("1") && password.equals("1")) {
+		String pass = KikkPreferenceManager.getInstance().getPreferencesString("pass");
+		if (pass == null){
+			pass = "1";
+		}
+		if (name.equals("1") && password.equals(pass)) {
 			KikkPreferenceManager.getInstance().savePreferencesBoolean(Constants.LOG_IN, true);
 			return true;
 		}

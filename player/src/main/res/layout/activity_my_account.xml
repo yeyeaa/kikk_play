@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:layout_marginTop="@dimen/navi_bar_height">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            style="@style/new_setting_relative_layout_item"
+            android:layout_marginTop="@dimen/setting_relative_layout_margin_top"
+            android:onClick="goNicknameSetting">
+
+            <TextView
+                style="@style/new_setting_grey_text"
+                android:text="@string/nickname" />
+
+            <ImageView
+                android:id="@+id/my_account_img_nickname_right_arrow"
+                style="@style/new_setting_img_arrow" />
+
+            <TextView
+                android:id="@+id/my_account_current_nickname"
+                style="@style/new_setting_right_note"
+                android:layout_toLeftOf="@id/my_account_img_nickname_right_arrow"
+                android:text="..." />
+        </RelativeLayout>
+
+        <View style="@style/new_setting_divider_left" />
+
+        <RelativeLayout
+            style="@style/new_setting_relative_layout_item"
+            android:onClick="goBoundPhone">
+
+            <TextView
+                style="@style/new_setting_grey_text"
+                android:text="@string/telephone_no" />
+
+            <ImageView
+                android:id="@+id/my_account_img_telephone_right_arrow"
+                style="@style/new_setting_img_arrow" />
+
+            <TextView
+                android:id="@+id/my_account_current_telephone"
+                style="@style/new_setting_right_note"
+                android:layout_toLeftOf="@id/my_account_img_telephone_right_arrow"
+                android:text="..." />
+        </RelativeLayout>
+
+        <View style="@style/new_setting_divider_left" />
+
+        <RelativeLayout
+            style="@style/new_setting_relative_layout_item"
+            android:onClick="goGenderSetting">
+
+            <TextView
+                android:id="@+id/temp"
+                style="@style/new_setting_grey_text"
+                android:text="@string/gender" />
+
+            <ImageView
+                android:id="@+id/gender_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/activity_my_account_notice_dot_margin"
+                android:layout_toRightOf="@id/temp"
+                android:background="@drawable/notice_dot" />
+
+            <ImageView
+                android:id="@+id/my_account_img_gender_right_arrow"
+                style="@style/new_setting_img_arrow" />
+
+            <TextView
+                android:id="@+id/my_account_gender"
+                style="@style/new_setting_right_note"
+                android:layout_toLeftOf="@id/my_account_img_gender_right_arrow"
+                android:text="..." />
+        </RelativeLayout>
+
+        <View style="@style/new_setting_divider_left" />
+
+        <RelativeLayout
+            style="@style/new_setting_relative_layout_item"
+            android:onClick="goBirthday">
+
+            <TextView
+                android:id="@+id/temp1"
+                style="@style/new_setting_grey_text"
+                android:text="@string/birthday" />
+
+            <ImageView
+                android:id="@+id/birthday_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/activity_my_account_notice_dot_margin"
+                android:layout_toRightOf="@id/temp1"
+                android:background="@drawable/notice_dot" />
+
+            <ImageView
+                android:id="@+id/my_account_img_birthday_right_arrow"
+                style="@style/new_setting_img_arrow" />
+
+            <TextView
+                android:id="@+id/my_account_birthday"
+                style="@style/new_setting_right_note"
+                android:layout_toLeftOf="@id/my_account_img_birthday_right_arrow"
+                android:text="..." />
+        </RelativeLayout>
+
+        <View style="@style/new_setting_divider_left" />
+
+
+        <RelativeLayout
+            style="@style/new_setting_relative_layout_item"
+            android:onClick="goModifyPassword">
+
+            <TextView
+                style="@style/new_setting_grey_text"
+                android:text="@string/modify_password" />
+
+            <ImageView style="@style/new_setting_img_arrow" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/info_usbmit"
+            style="@style/button_red_long"
+            android:text="提交"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</ScrollView>

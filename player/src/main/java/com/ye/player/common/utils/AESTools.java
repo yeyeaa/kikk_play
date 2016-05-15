@@ -25,7 +25,7 @@ import javax.crypto.spec.IvParameterSpec;
  */
 public class AESTools {
     // 密钥  
-    private final static String secretKey = "com.huisuoping.v4.uV252QkRe05ehplS";
+    private final static String secretKey = "com.kikk.v4.uV252QkRe05ehplS";
     // 向量  
     private final static String iv = "01234567";
     // 加解密统一使用的编码方式  

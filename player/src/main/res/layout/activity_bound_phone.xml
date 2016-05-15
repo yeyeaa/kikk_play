@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/navi_bar_height">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_modify_nickname_edit_layout_height"
+        android:layout_marginTop="@dimen/setting_relative_layout_margin_top"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edit_nick_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/setting_relative_layout_item_height"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:layout_marginLeft="@dimen/activity_modify_nickname_edit_text_margin_left"
+            android:layout_marginRight="@dimen/activity_modify_nickname_edit_text_margin_right"
+            android:hint="请输入手机号"
+            android:maxLength="11"
+            android:textColor="@color/black_order"
+            android:textColorHint="@color/grey_setting_right_note"
+            android:textSize="@dimen/setting_grey_text_size" />
+
+        <View style="@style/new_setting_divider" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/setting_relative_layout_item_padding"
+            android:layout_marginTop="8.5dp"
+            android:text="输入手机号可以让生活都变的棒棒哒哦。。。T T"
+            android:textColor="@color/grey_setting_right_note"
+            android:textSize="@dimen/setting_grey_number_size" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit"
+        style="@style/button_red_long"
+        android:text="@string/common_string_submit"
+        android:visibility="gone" />
+
+</LinearLayout>

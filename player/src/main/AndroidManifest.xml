@@ -44,13 +44,37 @@
 
         <activity
             android:name=".account.ui.SeetingActivity"
-            android:label="设置"
+            android:label=""
             android:screenOrientation="portrait">
         </activity>
 
         <activity
             android:name=".account.ui.AboutActivity"
             android:label="关于"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".account.ui.ModifyNickNameActivity"
+            android:label="更改昵称"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".account.ui.MyAccountActivity"
+            android:label="账户信息"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".account.ui.BoundPhoneActivity"
+            android:label="绑定手机号"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".account.ui.ModifyPasswordActivity"
+            android:label="修改密码"
             android:screenOrientation="portrait">
         </activity>
 

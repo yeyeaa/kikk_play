@@ -31,4 +31,38 @@
     <string name="about_huaqian">关于</string>
     <string name="quit">退出</string>
 
+    <!-- my account text -->
+    <string name="my_account_activity_label">我的账户</string>
+    <string name="nickname">昵称</string>
+    <string name="telephone_no">手机号</string>
+    <string name="recommendation_code">邀请码</string>
+    <string name="gender">性别</string>
+    <string name="birthday">生日</string>
+    <string name="modify_password">修改密码</string>
+    <string name="quit_login">退出登录</string>
+    <string name="you_not_bound_phone_yet">您还没有绑定手机号</string>
+    <string name="me_no_nick_name">朋友</string>
+
+    <!-- gender setting text -->
+    <string name="gender_setting_activity_label">设置性别</string>
+    <string name="gender_male">男</string>
+    <string name="gender_female">女</string>
+    <!-- birthday setting text -->
+    <string name="please_choose_your_birthday">请选择您的生日</string>
+    <string name="cancel">取消</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="hint_new_nickname">请输入您的新昵称</string>
+    <string name="common_string_submit">提交</string>
+    <string name="common_string_wait_notice">正在提交，请稍后&#8230;</string>
+
+    <string name="hint_old_password">请输入旧密码</string>
+    <string name="hint_new_password">请输入新密码</string>
+    <string name="hint_again_new_password">请确认新密码</string>
+    <string name="modify_old_password_hint">请输旧的密码</string>
+    <string name="modify_new_password_hint">请输入新密码</string>
+    <string name="modify_confirm_password_hint">请输入确认密码</string>
+    <string name="two_password">您两次密码输入不一致</string>
+
 </resources>

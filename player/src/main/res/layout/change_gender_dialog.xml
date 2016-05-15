@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/choose_msg_type_title_text_layout_height"
+        android:background="#ffffff"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/choose_msg_type_title_text_layout_padding_bottom"
+        android:paddingLeft="@dimen/choose_msg_type_title_text_layout_padding_left"
+        android:paddingRight="@dimen/choose_msg_type_title_text_layout_padding_right"
+        android:paddingTop="@dimen/choose_msg_type_title_text_layout_padding_top" >
+
+        <TextView
+            style="@style/dialog_text_title_large"
+            android:layout_alignParentLeft="true"
+            android:text="性别" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/gender_setting_rl_male_m"
+        style="@style/new_setting_relative_layout_item"
+        android:layout_height="@dimen/setting_relative_layout_item_height"
+        android:paddingBottom="@dimen/choose_msg_type_title_text_layout_padding_bottom"
+        android:paddingLeft="@dimen/choose_msg_type_title_text_layout_padding_left"
+        android:paddingRight="@dimen/choose_msg_type_title_text_layout_padding_right"
+        android:paddingTop="@dimen/choose_msg_type_title_text_layout_padding_top" >
+
+        <TextView
+            style="@style/new_setting_grey_text"
+            android:text="@string/gender_male"
+            android:textSize="@dimen/custom_dialog_text_title_text_size_medium" />
+
+        <ImageView
+            android:id="@+id/gender_setting_im_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/xuanze"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <View style="@style/custom_divider_short" /> 
+
+    <RelativeLayout
+        android:id="@+id/gender_setting_rl_female_f"
+        style="@style/new_setting_relative_layout_item"
+        android:layout_height="@dimen/setting_relative_layout_item_height"
+        android:paddingBottom="@dimen/choose_msg_type_title_text_layout_padding_bottom"
+        android:paddingLeft="@dimen/choose_msg_type_title_text_layout_padding_left"
+        android:paddingRight="@dimen/choose_msg_type_title_text_layout_padding_right"
+        android:paddingTop="@dimen/choose_msg_type_title_text_layout_padding_top" >
+
+        <TextView
+            style="@style/new_setting_grey_text"
+            android:text="@string/gender_female"
+            android:textSize="@dimen/custom_dialog_text_title_text_size_medium" />
+
+        <ImageView
+            android:id="@+id/gender_setting_im_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/xuanze"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>
