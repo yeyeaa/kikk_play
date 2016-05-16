@@ -499,7 +499,7 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
     private void setAd() {
         adImageView.setVisibility(View.VISIBLE);
         //需要改成从指定网址获取
-        adImageView.setBackground(getResources().getDrawable(R.drawable.icon_logo));
+        adImageView.setBackground(getResources().getDrawable(R.drawable.sock));
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
