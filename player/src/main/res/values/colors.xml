@@ -30,4 +30,14 @@
     <color name="black_order">#555555</color>
     <color name="color_gradiant">#00000000</color>
 
+
+    <!-- browser -->
+    <color name="web_app_line_color">#18ffffff</color>
+    <color name="web_app_bg">#ecf0ef</color>
+    <color name="web_app_browser_navigation_bg">#f7f7f7</color>
+    <color name="browser_pop_window_bg">#f2f2f2</color>
+    <color name="browser_pop_window_divider_bg">#dcdcdc</color>
+    <color name="browser_pop_window_title_txt_color">#555555</color>
+    <color name="btn_red_normal">#E93F33</color>
+
 </resources>

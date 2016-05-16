@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/webview_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingTop="@dimen/navi_bar_height"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/notice_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"></RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/webview_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/custom_browser_progressbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="@dimen/horizontal_progress_bar_height"
+            android:progressDrawable="@drawable/bar_color" />
+    </LinearLayout>
+
+    <com.ye.player.widget.BrowserBottomNavigationBar
+        android:id="@+id/bottom_navi"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/browser_bottom_navigation_bar_height"
+        android:visibility="gone"></com.ye.player.widget.BrowserBottomNavigationBar>
+</LinearLayout>

@@ -65,4 +65,18 @@
     <string name="modify_confirm_password_hint">请输入确认密码</string>
     <string name="two_password">您两次密码输入不一致</string>
 
+    <!-- browser-->
+    <string name="browser_more">更多</string>
+    <string name="browser_share_to">分享到</string>
+    <string name="browser_share_to_wechat">微信好友</string>
+    <string name="browser_share_to_moments">朋友圈</string>
+    <string name="browser_share_to_qq_zone">QQ空间</string>
+    <string name="browser_open_in_browser_outside">浏览器打开</string>
+    <string name="browser_more_forward">前进</string>
+    <string name="browser_more_backward">后退</string>
+    <string name="browser_more_refresh">刷新</string>
+    <string name="browser_more_blank">空白</string>
+    <string name="me_app_direction">玩转Kikk</string>
+    <string name="me_app_desc">Kikk</string>
+
 </resources>

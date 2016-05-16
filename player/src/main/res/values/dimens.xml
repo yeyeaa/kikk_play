@@ -123,4 +123,20 @@
     <dimen name="activity_set_new_modify_password_edit_margin_left">16dp</dimen>
     <dimen name="activity_set_new_modify_password_edit_margin_right">5dp</dimen>
 
+    <!-- horizontalProgressBar -->
+    <dimen name="horizontal_progress_bar_height">5dp</dimen>
+    <dimen name="browser_bottom_navigation_bar_height">54dp</dimen>
+
+
+    <!-- browser operation-->
+    <dimen name="browser_share_title_height">49dp</dimen>
+    <dimen name="browser_share_title_text_size">17sp</dimen>
+    <dimen name="browser_share_icon_text_size">10sp</dimen>
+    <dimen name="browser_share_layout_height">90dp</dimen>
+    <dimen name="browser_share_icon_spacing">9dp</dimen>
+    <dimen name="browser_more_share_operation_layout_height">89dp</dimen>
+    <dimen name="browser_more_share_icon_spacing">9dp</dimen>
+    <dimen name="browser_popup_window_divider_height">0.3dp</dimen>
+    <dimen name="browser_popup_window_divider_width">305dp</dimen>
+
 </resources>

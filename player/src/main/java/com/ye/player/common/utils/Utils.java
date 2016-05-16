@@ -52,6 +52,14 @@ import java.util.regex.Pattern;
 
 public class Utils {
 
+	public static void startActivityForBrowser(Context context, String url) {
+		Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URIUtils.appendHttpPrefix(url)));
+		try {
+			context.startActivity(intent);
+		} catch (Exception e) {
+		}
+	}
+
 	public static String getMetaValue(Context context, String metaKey) {
 		Bundle metaData = null;
 		String apiKey = null;

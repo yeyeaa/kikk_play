@@ -13,6 +13,32 @@ import com.ye.player.R;
 public class ErrorViewUtil {
     private static View notificationView;
 
+    public static void showNotificationInView(String text, final ViewGroup parentView, final Runnable reloadRunnable,
+                                              boolean folate) {
+        removeNotificationInView(parentView);
+        parentView.setVisibility(View.VISIBLE);
+        Context context = parentView.getContext();
+        if (folate) {
+            notificationView = LayoutInflater.from(context).inflate(R.layout.common_notice, null);
+        } else {
+            notificationView = LayoutInflater.from(context).inflate(R.layout.common_notic_marker, null);
+        }
+        LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+        TextView textView = (TextView) notificationView.findViewById(R.id.common_notice_text);
+        textView.setText(text);
+        parentView.addView(notificationView, layoutParams);
+        if (reloadRunnable != null) {
+            ImageView imageView = (ImageView) notificationView.findViewById(R.id.common_notice_img);
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    removeNotificationInView(parentView);
+                    reloadRunnable.run();
+                }
+            });
+        }
+    }
+
     public static void removeNotificationInView(ViewGroup parentView) {
         /*if (parentView.getId() == R.id.notice_container) {
             parentView.setVisibility(View.GONE);
