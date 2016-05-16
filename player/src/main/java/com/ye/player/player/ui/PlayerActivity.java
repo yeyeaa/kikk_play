@@ -1,9 +1,12 @@
 package com.ye.player.player.ui;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.SpannableStringBuilder;
@@ -16,10 +19,14 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.ye.player.R;
+import com.ye.player.ad.bean.AdInfo;
+import com.ye.player.ad.services.AdInfoService;
+import com.ye.player.ad.ui.CustomBrowserActivity;
 import com.ye.player.common.bean.VideoInfo;
 import com.ye.player.common.ui.activity.BaseActivity;
 import com.ye.player.common.utils.StringUtil;
@@ -32,6 +39,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -93,16 +101,48 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
 
     private int currentPosition = 0;
 
+    private ImageView adImageView;
+
+    private AdInfoService adInfoService;
+
+    private AdInfo currentAdInfo;
+
+    private List<AdInfo> adList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
         videoInfo = (VideoInfo) getIntent().getSerializableExtra("videoInfo");
+        adInfoService = new AdInfoService(PlayerActivity.this);
+        adList = adInfoService.getAds(videoInfo);
         initViews();
         setDanmaku();
+       // setAds();
         task = new TimeOutTask();
         timer.schedule(task,DELAY_MISS);
     }
+
+    /*private void setAds() {
+        for(final AdInfo adInfo : adList){
+            mHandler.postDelayed(new Runnable() {
+                @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+                @Override
+                public void run() {
+                    adImageView.setVisibility(View.VISIBLE);
+                    adLink = adInfo.getLink();
+                    //需要改成从指定网址获取
+                    adImageView.setBackground(getResources().getDrawable(R.drawable.icon_logo));
+                    mHandler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            adImageView.setVisibility(View.GONE);
+                        }
+                    }, adInfo.getDuration());
+                }
+            }, adInfo.getStartTime());
+        }
+    }*/
 
     private void initViews() {
         seekBar = (SeekBar)findViewById(R.id.seekbar) ;
@@ -152,6 +192,8 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
             }
         });
 
+        adImageView = (ImageView) findViewById(R.id.ad_imageview);
+        adImageView.setOnClickListener(this);
     }
 
     private BaseDanmakuParser createParser(InputStream stream) {
@@ -324,6 +366,11 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
             mMediaController.setVisibility(View.GONE);
             hideKeyBoard();
         }
+        if (v == adImageView){
+            Intent intent = new Intent(PlayerActivity.this, CustomBrowserActivity.class);
+            intent.putExtra("url", currentAdInfo.getLink());
+            startActivity(intent);
+        }
         if (v == btnBack) {
             this.finish();
         } else if (v ==btnPause) {
@@ -430,19 +477,47 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
     }
 
     private Runnable run = new Runnable() {
-        int currentPosition, duration;
+        long currentPosition, duration;
 
         public void run() {
             // 获得当前播放时间和当前视频的长度
             currentPosition = mVideoView.getCurrentPosition();
             duration = mVideoView.getDuration();
-            int progress = ((currentPosition * 100) / duration);
+            long progress = ((currentPosition * 100) / duration);
             // 设置进度条的主要进度，表示当前的播放时间
-            seekBar.setProgress(progress);
+            seekBar.setProgress((int)progress);
             textViewTime.setText(TimeUtils.longToString(currentPosition)+"/"+TimeUtils.longToString(videoInfo.getDuration()));
             mHandler.postDelayed(run, 500);
+
+            if (hasAd(currentPosition)){
+                setAd();
+            }
         }
     };
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    private void setAd() {
+        adImageView.setVisibility(View.VISIBLE);
+        //需要改成从指定网址获取
+        adImageView.setBackground(getResources().getDrawable(R.drawable.icon_logo));
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                adImageView.setVisibility(View.GONE);
+            }
+        }, currentAdInfo.getDuration());
+    }
+
+    private boolean hasAd(long currentPosition) {
+        for (AdInfo adInfo: adList){
+            long temp = adInfo.getStartTime()-currentPosition;
+            if (temp<500&&temp>=0){
+                currentAdInfo = adInfo;
+                return true;
+            }
+        }
+        return false;
+    }
 
     public boolean hasNavigationBar() {
         return false;

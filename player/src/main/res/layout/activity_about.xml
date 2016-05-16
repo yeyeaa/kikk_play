@@ -70,7 +70,7 @@
 
                     <TextView
                         style="@style/new_setting_grey_text"
-                        android:text="作者： 于同学" />
+                        android:text="作者： 不想写毕设的于同学" />
                 </RelativeLayout>
 
                 <View style="@style/new_setting_about" />
