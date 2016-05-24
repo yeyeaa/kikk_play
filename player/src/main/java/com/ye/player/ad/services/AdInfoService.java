@@ -22,19 +22,19 @@ public class AdInfoService {
         List<AdInfo> list = new ArrayList<>();
         AdInfo  adInfo = new AdInfo();
         adInfo.setAdId("00001");
-        adInfo.setStartTime(35000L);
-        adInfo.setDuration(5000L);
+        adInfo.setStartTime(10000L);
+        adInfo.setDuration(50000L);
         adInfo.setImageSoturce("www.baidu.com");
         adInfo.setLink("http://taobao.com/");
         list.add(adInfo);
 
-        AdInfo  adInfo1 = new AdInfo();
+       /* AdInfo  adInfo1 = new AdInfo();
         adInfo1.setAdId("00002");
         adInfo1.setStartTime(55000L);
         adInfo1.setDuration(5000L);
         adInfo1.setImageSoturce("www.baidu.com");
         adInfo1.setLink("http://www.baidu.com");
-        list.add(adInfo1);
+        list.add(adInfo1);*/
 
         return list;
     }
