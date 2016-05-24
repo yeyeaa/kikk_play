@@ -27,6 +27,7 @@ import com.ye.player.R;
 import com.ye.player.ad.bean.AdInfo;
 import com.ye.player.ad.services.AdInfoService;
 import com.ye.player.ad.ui.CustomBrowserActivity;
+import com.ye.player.common.PicassoImageLoader;
 import com.ye.player.common.bean.VideoInfo;
 import com.ye.player.common.ui.activity.BaseActivity;
 import com.ye.player.common.utils.StringUtil;
@@ -499,7 +500,9 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
     private void setAd() {
         adImageView.setVisibility(View.VISIBLE);
         //需要改成从指定网址获取
-        adImageView.setBackground(getResources().getDrawable(R.drawable.sock));
+          //效率低
+        //adImageView.setBackground(getResources().getDrawable(R.drawable.sock));
+        PicassoImageLoader.loadImage(R.drawable.sock, adImageView);
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {

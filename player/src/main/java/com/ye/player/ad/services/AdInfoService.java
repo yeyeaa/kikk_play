@@ -23,7 +23,7 @@ public class AdInfoService {
         AdInfo  adInfo = new AdInfo();
         adInfo.setAdId("00001");
         adInfo.setStartTime(10000L);
-        adInfo.setDuration(50000L);
+        adInfo.setDuration(5000L);
         adInfo.setImageSoturce("www.baidu.com");
         adInfo.setLink("http://taobao.com/");
         list.add(adInfo);
