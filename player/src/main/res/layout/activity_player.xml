@@ -25,6 +25,7 @@
         android:layout_height="80dp"
         android:layout_gravity="center_vertical|right"
         android:layout_marginRight="30dp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:background="@drawable/myad"/>
 
 </FrameLayout>

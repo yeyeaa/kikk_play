@@ -14,8 +14,7 @@
             android:id="@+id/thumb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="fitXY"
-            android:background="@drawable/error"/>
+            android:scaleType="fitXY" />
         <TextView
             android:id="@+id/duration"
             android:layout_width="match_parent"

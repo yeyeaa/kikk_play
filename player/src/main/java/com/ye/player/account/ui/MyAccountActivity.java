@@ -92,7 +92,7 @@ public class MyAccountActivity extends BaseActivity implements OnClickListener {
 		}
 		String nickName = user.getNickName();
 		((TextView) findViewById(R.id.my_account_current_nickname))
-				.setText(nickName == null ? getString(R.string.me_no_nick_name) + user.getRecommendedCode() : nickName);
+				.setText(nickName);
 		sexShort = user.getGender();
 		if (sexShort == null) {
 			sexShort = 1;
@@ -201,7 +201,13 @@ public class MyAccountActivity extends BaseActivity implements OnClickListener {
 
 		@SuppressLint("NewApi")
 		private void init() {
-			String birthDay = userInfoService.getCurrentUserInfo().getBirthday();
+			String birthDay;
+			if (userInfoService.getCurrentUserInfo()!=null){
+				birthDay = userInfoService.getCurrentUserInfo().getBirthday();
+			}else{
+				birthDay = "1990-1-1";
+			}
+
 			if (StringUtil.isEmpty(birthDay) || birthDay.split("-").length != 3) {
 				defaultYear = 1900;
 				defaultMonth = 1;

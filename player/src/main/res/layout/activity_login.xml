@@ -121,6 +121,7 @@
             android:layout_width="match_parent"
             android:layout_below="@+id/linearLayout1"
             android:background="@drawable/login_pink_btn_bg"
+            android:textColor="@color/white"
             android:text="@string/login" />
 
        <!-- <TextView

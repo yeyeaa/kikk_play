@@ -12,8 +12,6 @@ public class UserInfo {
 
 	private String nickName;
 
-	private String recommendedCode;
-
 	private Short gender;
 
 	private String birthday;
@@ -64,14 +62,6 @@ public class UserInfo {
 
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
-	}
-
-	public String getRecommendedCode() {
-		return recommendedCode;
-	}
-
-	public void setRecommendedCode(String recommendedCode) {
-		this.recommendedCode = recommendedCode;
 	}
 
 	public Short getGender() {

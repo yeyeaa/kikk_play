@@ -498,11 +498,12 @@ public class PlayerActivity extends BaseActivity implements View.OnClickListener
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     private void setAd() {
-        adImageView.setVisibility(View.VISIBLE);
+
         //需要改成从指定网址获取
           //效率低
         //adImageView.setBackground(getResources().getDrawable(R.drawable.sock));
-        PicassoImageLoader.loadImage(R.drawable.sock, adImageView);
+       // PicassoImageLoader.loadImage(R.drawable.sock, adImageView);
+        adImageView.setVisibility(View.VISIBLE);
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
